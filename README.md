@@ -1,85 +1,85 @@
-# Itz Fizz — Scroll-Driven Car Hero
+# ITZFIZZ — Scroll-Driven Hero Animation
 
-A polished, responsive automotive landing page built around a red sports car and a scroll-pinned hero. The introductory typography and impact metrics animate on entry; GSAP ScrollTrigger ties the car's transform to scroll progress.
+A premium, responsive creative-agency landing page built around a custom vector car and a scroll-controlled driving scene. The visual interaction is inspired by the idea of a car moving as the visitor scrolls; the design, illustration, copy, and implementation are original to this project.
 
-## Live project
+## Live demo and source
 
-- Live site: [https://jayasimha45.github.io/itz-fizz-scroll-hero/](https://jayasimha45.github.io/itz-fizz-scroll-hero/)
-- Repository: [https://github.com/jayasimha45/itz-fizz-scroll-hero](https://github.com/jayasimha45/itz-fizz-scroll-hero)
+- Live demo: [https://jayasimha45.github.io/itz-fizz-scroll-hero/](https://jayasimha45.github.io/itz-fizz-scroll-hero/)
+- GitHub repository: [https://github.com/jayasimha45/itz-fizz-scroll-hero](https://github.com/jayasimha45/itz-fizz-scroll-hero)
 
 ## Features
 
-- Full-viewport hero with responsive headline and four impact statistics.
-- GSAP intro reveal with sequential count-up metrics.
-- ScrollTrigger pin and scrub for the car's horizontal movement, rotation, vertical drift, and scale.
-- Reduced-motion support that skips motion and leaves the complete content visible.
-- Responsive layout for phones, tablets, laptops, and wide displays.
-- Static Next.js export with a GitHub Actions deployment workflow for GitHub Pages.
-- Car photo stored locally in `public/`; no runtime image-host dependency.
+- Full-viewport hero with an animated, letter-spaced headline, description, calls to action, and four impact metrics.
+- Original inline SVG grand-touring car with shaded bodywork, glass, headlights, detailed wheels, and a ground shadow.
+- ScrollTrigger scrub maps scroll progress to the car's horizontal movement, vertical drift, rotation, scale, and wheel rotation. Scrolling upward reverses the animation.
+- Three-dimensional viewport-height scroll scene, fixed navigation, subtle progress line, and a transition section.
+- Responsive desktop navigation and an accessible mobile menu that closes on navigation or Escape.
+- Reduced-motion support: the long pinned scene and complex motion are disabled while content and a static car remain visible.
+- Transform-based animation, scoped GSAP contexts, cleanup on unmount, and no per-frame React state updates.
+- GitHub Pages deployment with a repository-aware production base path.
 
 ## Tech stack
 
-- Next.js 15 and React 19
-- TypeScript and JavaScript
-- Tailwind CSS 4
-- GSAP 3, `@gsap/react`, and ScrollTrigger
+- React 19 and JavaScript (JSX)
+- Vite 8
+- Tailwind CSS 3
+- GSAP 3 and ScrollTrigger
+- HTML5 and CSS3
 
 ## Requirements
 
-- Node.js 20 or newer
+- Node.js 20.19 or newer (or Node.js 22.12 or newer)
 - npm
 
-## Install and run
+## Install and develop
 
 ```bash
 npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000). The development server uses `.next-dev` so a production export can be built without replacing the development server's files.
+Open [http://localhost:3000](http://localhost:3000).
 
-Run the TypeScript check with:
-
-```bash
-npm run typecheck
-```
-
-## Build
+## Production build
 
 ```bash
 npm run build
+npm run preview
 ```
 
-Next.js writes the static site to `out/`. Preview the generated static site with any local static-file server that serves `out/` as its document root.
+The production files are generated in `dist/`. Production builds use `/itz-fizz-scroll-hero/` as their asset base for GitHub Pages; Vite's development server serves from `/`.
 
-## Deploy to GitHub Pages
+## GitHub Pages deployment
 
-The included [Pages workflow](.github/workflows/deploy.yml) installs dependencies, creates the static export, uploads `out/`, and deploys it. GitHub Pages is configured to use **GitHub Actions** for this repository.
+The workflow in `.github/workflows/deploy.yml` installs the lockfile dependencies, builds the static site, uploads `dist/`, and publishes it to GitHub Pages.
 
-Push to `main` (or `master`) or manually start **Deploy to GitHub Pages** from the repository's Actions tab. For a repository named `owner.github.io`, the configuration automatically omits the repository base path; other repository names use their matching path. The image source follows the same base path.
+1. Push changes to `main` or run **Deploy to GitHub Pages** from the repository's Actions tab.
+2. Ensure the repository's Pages source is set to **GitHub Actions**.
+3. Open the Live demo link above after the workflow completes.
 
 ## Project structure
 
 ```text
-app/
-  globals.css       Responsive design system and page styles
-  layout.tsx        Root layout and metadata
-  page.tsx          Page composition
-components/
-  CarVisual.tsx     Accessible SVG-clipped local car photo
-  HeroSection.tsx   Intro and scroll-linked GSAP animation
-  SiteFooter.tsx    Shared page footer
-  StatsGrid.tsx     Reusable impact metrics
-  StorySection.tsx  Supporting brand story section
-lib/
-  content.ts        Statistics and content data
-  gsap.ts           GSAP plugin registration
-public/images/
-  itz-fizz-car.png  Supplied red car image
+src/
+  components/
+    CarVisual.jsx           Original accessible SVG car illustration
+    Hero.jsx                Hero scene and ScrollTrigger car animation
+    Navbar.jsx              Responsive navigation and mobile menu
+    Stats.jsx               Reusable impact metrics
+    TransitionSection.jsx   Follow-on brand section
+  lib/
+    gsap.js                 Central GSAP and ScrollTrigger registration
+  styles/
+    index.css               Tailwind layers, responsive details, and motion rules
+  App.jsx                   Page composition and intro/progress animations
+  main.jsx                  React entry point
+index.html                  Vite document and metadata
+vite.config.js              Vite and GitHub Pages path configuration
+tailwind.config.js          Tailwind scan paths and theme
 .github/workflows/
-  deploy.yml        GitHub Pages build and deployment
+  deploy.yml                Build and GitHub Pages deployment
 ```
 
-## Motion and cleanup
+## Animation and accessibility notes
 
-The hero uses `@gsap/react`'s `useGSAP` hook scoped to its section. It automatically reverts the intro timeline and ScrollTriggers when the component is removed, avoiding duplicate triggers during React development remounts. Scroll animation uses GSAP transforms with `scrub`; no scroll handler or React state update runs per frame. When `prefers-reduced-motion: reduce` is enabled, the hook exits before creating animations or pinning the hero.
+Intro and scroll animations are created in React layout effects inside `gsap.context()` scopes. Each context is reverted during cleanup, including React Strict Mode remounts. ScrollTrigger controls the car and progress indicator with scrubbed transforms; there is no timer-driven car animation or scroll-event state loop. When `prefers-reduced-motion: reduce` is active, the animation hooks return before creating timelines or ScrollTriggers, and CSS makes the scene a regular viewport-height section with a stationary car.
