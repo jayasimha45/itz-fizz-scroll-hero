@@ -22,9 +22,9 @@ export default function Hero() {
       };
 
       gsap.fromTo(".car-wrap",
-        { x: () => -(carRef.current?.getBoundingClientRect().width ?? carWidth) * 0.18, y: 20, rotation: -1.2, scale: 0.97 },
+        { x: () => window.innerWidth - (carRef.current?.getBoundingClientRect().width ?? carWidth) * 0.82, y: 20, rotation: -1.2, scale: 0.97 },
         {
-          x: () => window.innerWidth - (carRef.current?.getBoundingClientRect().width ?? carWidth) * 0.82,
+          x: () => -(carRef.current?.getBoundingClientRect().width ?? carWidth) * 0.18,
           y: -8,
           rotation: 1.4,
           scale: 1.03,
@@ -41,7 +41,7 @@ export default function Hero() {
       });
 
       gsap.to(".road-line", {
-        xPercent: -16,
+        xPercent: 16,
         ease: "none",
         scrollTrigger: { ...drive },
       });
