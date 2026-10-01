@@ -1,46 +1,74 @@
+function Wheel({ x, y, radius, className = "" }) {
+  return (
+    <g className={`wheel ${className}`} transform={`translate(${x} ${y})`}>
+      <circle r={radius} fill="#080b0d" stroke="#30383c" strokeWidth="9" />
+      <circle r={radius * 0.83} fill="#171d21" stroke="#798185" strokeWidth="4" />
+      <circle r={radius * 0.69} fill="#0b1013" stroke="#333b3f" strokeWidth="3" />
+      <g stroke="#a7afb1" strokeWidth="4" strokeLinecap="round">
+        <path d={`M0 ${-radius * .6}V${-radius * .16}M${radius * .57} ${-radius * .18} ${radius * .16} ${-radius * .06}M${radius * .35} ${radius * .48} ${radius * .1} ${radius * .13}M${-radius * .35} ${radius * .48} ${-radius * .1} ${radius * .13}M${-radius * .57} ${-radius * .18} ${-radius * .16} ${-radius * .06}M0 ${radius * .6}V${radius * .16}M${radius * .57} ${radius * .18} ${radius * .16} ${radius * .06}M${-radius * .57} ${radius * .18} ${-radius * .16} ${radius * .06}`} />
+      </g>
+      <circle r={radius * 0.19} fill="#aab3b5" />
+      <circle r={radius * 0.09} fill="#333b3f" />
+    </g>
+  );
+}
+
 export default function CarVisual() {
   return (
-    <svg className="car-wrap w-[min(78vw,760px)] sm:w-[min(70vw,780px)]" viewBox="0 0 900 320" role="img" aria-labelledby="car-title car-description">
-      <title id="car-title">Futuristic electric race car</title>
-      <desc id="car-description">A top-down white electric race car with green accents and a visible charging indicator.</desc>
+    <svg className="car-wrap w-[min(112vw,1040px)] sm:w-[min(90vw,1120px)]" viewBox="0 0 1000 500" role="img" aria-labelledby="car-title car-description">
+      <title id="car-title">Red performance SUV in a storm</title>
+      <desc id="car-description">An original red off-road SUV illustration with illuminated headlights, detailed wheels, and sculpted bodywork.</desc>
       <defs>
-        <linearGradient id="car-shell" x1="0" y1="0" x2="0" y2="1"><stop stopColor="#fff"/><stop offset=".48" stopColor="#e7edf0"/><stop offset="1" stopColor="#aab5bb"/></linearGradient>
-        <linearGradient id="canopy" x1="0" y1="0" x2="1" y2="1"><stop stopColor="#26323a"/><stop offset=".5" stopColor="#071016"/><stop offset="1" stopColor="#18242c"/></linearGradient>
-        <filter id="soft-shadow" x="-20%" y="-40%" width="140%" height="180%"><feGaussianBlur stdDeviation="12"/></filter>
+        <linearGradient id="suv-paint" x1="0" y1="0" x2=".84" y2="1"><stop stopColor="#ff6863"/><stop offset=".22" stopColor="#e52c32"/><stop offset=".62" stopColor="#a90913"/><stop offset="1" stopColor="#540810"/></linearGradient>
+        <linearGradient id="suv-side" x1="0" y1="0" x2="0" y2="1"><stop stopColor="#ef353a"/><stop offset=".58" stopColor="#b20e19"/><stop offset="1" stopColor="#500810"/></linearGradient>
+        <linearGradient id="suv-glass" x1="0" y1="0" x2=".8" y2="1"><stop stopColor="#9fb9bd"/><stop offset=".2" stopColor="#23383e"/><stop offset=".65" stopColor="#0c171c"/><stop offset="1" stopColor="#53666a"/></linearGradient>
+        <linearGradient id="suv-grille" x1="0" y1="0" x2="0" y2="1"><stop stopColor="#252d31"/><stop offset="1" stopColor="#05090b"/></linearGradient>
+        <linearGradient id="suv-metal" x1="0" y1="0" x2="1" y2="1"><stop stopColor="#f3f6f4"/><stop offset=".4" stopColor="#859195"/><stop offset="1" stopColor="#d8dfdf"/></linearGradient>
+        <radialGradient id="headlamp"><stop stopColor="#fff"/><stop offset=".15" stopColor="#dff7ff"/><stop offset=".48" stopColor="#6fcfff"/><stop offset="1" stopColor="#6fcfff" stopOpacity="0"/></radialGradient>
+        <filter id="suv-shadow" x="-20%" y="-40%" width="140%" height="190%"><feGaussianBlur stdDeviation="17"/></filter>
+        <filter id="lamp-glow" x="-150%" y="-150%" width="400%" height="400%"><feGaussianBlur stdDeviation="10"/></filter>
       </defs>
-      <ellipse className="car-shadow" cx="452" cy="181" rx="380" ry="92" fill="#000" opacity=".52" filter="url(#soft-shadow)"/>
-      {/* wheel pods */}
-      {[{x:105,y:57},{x:105,y:211},{x:693,y:57},{x:693,y:211}].map(({x,y}, i) => <g key={i} className="wheel" transform={`translate(${x} ${y})`}>
-        <rect x="0" y="0" width="105" height="53" rx="23" fill="#080d11" stroke="#39434a" strokeWidth="4"/>
-        <rect x="11" y="8" width="83" height="37" rx="17" fill="#242e34"/>
-        <path d="M20 26h65M52 10v33M29 12l47 29M77 12 29 41" stroke="#9ca9ae" strokeWidth="3" opacity=".75"/>
-        <circle cx="52" cy="26" r="8" fill="#50d98d"/>
-      </g>)}
-      {/* rear wing and chassis */}
-      <path d="M77 106 42 93v15H18v12h62m-62 80h24v13l35-14" fill="none" stroke="#151d22" strokeWidth="13" strokeLinecap="round" strokeLinejoin="round"/>
-      <path d="M139 43c62-26 162-34 300-34h125c96 0 158 22 205 55l74 51c30 20 43 38 43 47s-13 27-43 47l-74 51c-47 33-109 55-205 55H439c-138 0-238-8-300-34-48-20-78-59-78-119s30-99 78-119Z" fill="url(#car-shell)" stroke="#f7fafb" strokeWidth="5"/>
-      <path d="M158 58c63-21 153-27 278-27h127c92 0 142 21 183 50l63 45H168c-29 0-46-14-46-31 0-14 13-28 36-37Z" fill="#f8fbfc" opacity=".7"/>
-      <path d="M167 262c65 21 158 27 269 27h127c92 0 142-21 183-50l63-45H168c-29 0-46 14-46 31 0 14 13 28 45 37Z" fill="#89969e" opacity=".48"/>
-      {/* cockpit */}
-      <path d="M332 65c35-25 86-34 143-34s108 9 143 34c37 26 57 58 57 95s-20 69-57 95c-35 25-86 34-143 34s-108-9-143-34c-37-26-57-58-57-95s20-69 57-95Z" fill="url(#canopy)" stroke="#27363d" strokeWidth="5"/>
-      <path d="M342 77c32-18 78-26 133-26v217c-55 0-101-8-133-26-29-17-45-42-45-82s16-65 45-83Z" fill="#111c22" opacity=".74"/>
-      <path d="M337 70c29-15 65-22 107-25" fill="none" stroke="#42d78b" strokeWidth="4" opacity=".8"/>
-      {/* nose accents and lights */}
-      <path d="M672 87 789 111l47 34-103-12-62-20Z" fill="#43d989"/>
-      <path d="m672 233 117-24 47-34-103 12-62 20Z" fill="#43d989"/>
-      <path d="m781 128 60 17-60 17" fill="none" stroke="#f7ffff" strokeWidth="8" strokeLinecap="round"/>
-      <path d="m781 175 60-17" fill="none" stroke="#f7ffff" strokeWidth="5" strokeLinecap="round" opacity=".65"/>
-      {/* rear lamps */}
-      <rect x="90" y="126" width="25" height="12" rx="6" fill="#ff5368"/><rect x="90" y="182" width="25" height="12" rx="6" fill="#ff5368"/>
-      <circle cx="126" cy="144" r="8" fill="#10191e"/><circle cx="126" cy="174" r="8" fill="#10191e"/>
-      {/* charging indicator on deck */}
-      <rect x="188" y="144" width="85" height="32" rx="10" fill="#101a1f" stroke="#52636a" strokeWidth="2"/>
-      <rect x="196" y="152" width="68" height="16" rx="5" fill="#26343a"/>
-      <rect className="battery-fill" x="196" y="152" width="68" height="16" rx="5" fill="#43d989"/>
-      <path d="m232 153-8 9h7l-3 6 12-10h-8l4-5Z" fill="#07120c"/>
-      {/* sensor details */}
-      <rect x="144" y="72" width="37" height="13" rx="6.5" fill="#202b31"/><rect x="144" y="235" width="37" height="13" rx="6.5" fill="#202b31"/>
-      <path d="M204 106h43m-43 108h43" stroke="#172127" strokeWidth="7" strokeLinecap="round"/>
+
+      <ellipse cx="520" cy="409" rx="416" ry="54" fill="#000" opacity=".78" filter="url(#suv-shadow)"/>
+      {/* Far side wheels */}
+      <Wheel x={286} y={323} radius={72} />
+      <Wheel x={711} y={316} radius={81} />
+      {/* Rear quarter and cabin */}
+      <path d="m104 302 34-89c13-35 43-63 80-77l104-40c39-15 82-22 128-20l133 6c43 2 79 21 111 56l74 82 80 34c46 20 76 55 88 95l-17 54c-12 22-40 34-79 31l-38-14c-7-66-40-105-91-105-49 0-84 39-96 105l-251 6c-5-62-32-94-80-94s-82 37-92 91l-86-8c-28-3-48-24-49-55l7-58Z" fill="url(#suv-paint)" stroke="#29070a" strokeWidth="8" strokeLinejoin="round"/>
+      {/* Roof and panoramic windows */}
+      <path d="m246 197 48-91c12-24 35-41 67-48l78-16c42-8 80-6 119 2l42 10c27 7 49 23 69 48l48 66-112-14-263 10-96 33Z" fill="url(#suv-glass)" stroke="#1d282c" strokeWidth="8" strokeLinejoin="round"/>
+      <path d="m365 62-52 96 174-7 19-105c-49-4-94 0-141 16Z" fill="#21363b" stroke="#111a1d" strokeWidth="5"/>
+      <path d="m520 46-15 105 183 14-41-56c-19-26-39-42-67-49l-60-14Z" fill="#101d22" stroke="#111a1d" strokeWidth="5"/>
+      <path d="m308 168 207-17 184 14" fill="none" stroke="#dce6e5" strokeWidth="4" opacity=".58"/>
+      <path d="M507 52 494 155" stroke="#718286" strokeWidth="5"/>
+      <path d="m256 185 45-81" stroke="#fff" strokeWidth="5" opacity=".28"/>
+      {/* Door panels and sculpted reflections */}
+      <path d="m226 206 66-19-10 120m235-128-7 156m12-155 160 14 40 101" fill="none" stroke="#5b090f" strokeWidth="8" opacity=".8"/>
+      <path d="m165 252 105-37 162-22m120 9 91 10" fill="none" stroke="#ff8b80" strokeWidth="5" opacity=".48"/>
+      <path d="m300 194 15 8-12 9h-32l8-8m284-14 25 1 11 8-8 8h-29" fill="#171d20" stroke="#a0a8a7" strokeWidth="2"/>
+      <path d="m164 216 34-12 22 6-6 11-41 13Z" fill="url(#suv-metal)" stroke="#273135" strokeWidth="5"/>
+      {/* Wheel arches and dark rocker trim */}
+      <path d="M194 321c13-66 48-105 98-105 54 0 85 43 90 110m230-7c12-73 51-113 104-113 58 0 93 47 99 112" fill="none" stroke="#292f32" strokeWidth="14"/>
+      <path d="m149 355 98 12m144 1 251-7m183-2 94-8" fill="none" stroke="#151b1e" strokeWidth="24" strokeLinecap="round"/>
+      <path d="m159 350 98 11m483-2 77-7" fill="none" stroke="#91999b" strokeWidth="4" opacity=".6"/>
+      {/* Front fascia, grille and bumper */}
+      <path d="m717 205 93 27c49 16 87 53 104 94l10 37c-16 24-45 36-82 33l-54-16-2-52c-6-51-38-84-83-87l14-36Z" fill="url(#suv-paint)" stroke="#30070b" strokeWidth="8"/>
+      <path d="m788 252 76 26c26 10 45 28 56 51l-10 52-119-4-15-50c-7-22-19-36-38-45Z" fill="url(#suv-grille)" stroke="#11181b" strokeWidth="8"/>
+      <path d="m811 267 11 102m18-94 11 99m17-86 10 88m16-68 6 65" stroke="#9ca5a5" strokeWidth="7"/>
+      <path d="m793 257 67 23m-60-3 78 27m-66-6 72 28m-63-7 64 26" stroke="#455055" strokeWidth="4" opacity=".85"/>
+      <path d="m722 218 51 10 27 23-68-9Z" fill="#f3f6f2" stroke="#222a2d" strokeWidth="5"/>
+      <path d="m726 222 43 9 19 15-57-7Z" fill="#73d9ff" filter="url(#lamp-glow)"/>
+      <path d="m727 222 42 9 17 14-53-7Z" fill="#e4faff"/>
+      <circle cx="754" cy="233" r="35" fill="url(#headlamp)" opacity=".82"/>
+      <path d="m886 306 22 12m-30 22 31 8" stroke="#e9f7ff" strokeWidth="8" strokeLinecap="round"/>
+      <path d="m780 373 130-4-12 24-93 5Z" fill="#171d20" stroke="#899395" strokeWidth="4"/>
+      <path d="m798 385 84-3" stroke="#c0c7c7" strokeWidth="4"/>
+      <path d="m864 395-41 8" stroke="#bc9d56" strokeWidth="8"/>
+      {/* Rear lamp and mirror */}
+      <path d="m110 290 45 10-7 34-43-11Z" fill="#ff5360" stroke="#631016" strokeWidth="5"/>
+      <path d="m232 178-37-15-24 8 12 17Z" fill="#b40f1a" stroke="#601018" strokeWidth="5"/>
+      {/* Rain reflections */}
+      <path d="m240 287 122-34m42 66 128-39m54-25 77-20" stroke="#ffb9ae" strokeWidth="4" opacity=".25"/>
     </svg>
   );
 }
