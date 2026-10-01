@@ -63,23 +63,23 @@ function App() {
   }, []);
 
   return (
-    <div ref={appRef} className="min-h-screen overflow-x-clip bg-[#f6f6f3] text-[#111]">
+    <div ref={appRef} className="min-h-screen overflow-x-clip bg-[#070a0c] text-[#f4f7f6]">
       <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} onNavigate={() => setMenuOpen(false)} />
       <main>
         <Hero />
         <TransitionSection />
       </main>
-      <footer id="contact" className="border-t border-black/10 px-6 py-9 md:px-10">
+      <footer id="contact" className="border-t border-white/10 px-6 py-9 md:px-10">
         <div className="mx-auto flex max-w-7xl flex-col justify-between gap-5 sm:flex-row sm:items-end">
           <div>
-            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-black/45">Have a project in mind?</p>
+            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/45">Have a project in mind?</p>
             <p className="mt-2 text-xl font-semibold tracking-tight">Let’s make something meaningful.</p>
           </div>
-          <div className="flex flex-wrap gap-x-6 gap-y-3 text-xs font-semibold uppercase tracking-[0.14em] text-black/55">
+          <div className="flex flex-wrap gap-x-6 gap-y-3 text-xs font-semibold uppercase tracking-[0.14em] text-white/55">
             <a className="footer-link" href="https://github.com/jayasimha45/itz-fizz-scroll-hero" target="_blank" rel="noreferrer">View project source ↗</a>
             <a className="footer-link" href="#top">Back to top ↑</a>
           </div>
-          <p className="text-[10px] uppercase tracking-[0.16em] text-black/35 sm:text-right">ITZFIZZ / Scroll Experience</p>
+          <p className="text-[10px] uppercase tracking-[0.16em] text-white/35 sm:text-right">ITZFIZZ / Scroll Experience</p>
         </div>
       </footer>
     </div>
