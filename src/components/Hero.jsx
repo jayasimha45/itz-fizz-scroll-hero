@@ -86,6 +86,7 @@ export default function Hero() {
           <div className="scene-grid pointer-events-none absolute inset-0" aria-hidden="true" />
           <div className="scene-overlay pointer-events-none absolute inset-0 opacity-0" aria-hidden="true" />
           <div className="storm-light pointer-events-none absolute inset-0" aria-hidden="true" />
+          <div className="landscape pointer-events-none absolute inset-0" aria-hidden="true"><div className="ridge ridge-far" /><div className="ridge ridge-near" /></div>
           <div className="rain-layer rain-far pointer-events-none absolute inset-0" aria-hidden="true" />
           <div className="rain-layer rain-near pointer-events-none absolute inset-0" aria-hidden="true" />
           <div className="ambient-orb pointer-events-none absolute -right-28 top-24 h-[min(54vw,560px)] w-[min(54vw,560px)] rounded-full border border-white/[0.04] bg-slate-300/[0.025]" aria-hidden="true" />

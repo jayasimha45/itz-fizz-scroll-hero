@@ -29,6 +29,7 @@ body {
   background: #070a0c;
   -webkit-font-smoothing: antialiased;
 }
+.hero-scene { background: linear-gradient(180deg, #11191e 0%, #1a262c 39%, #151c20 66%, #090d10 100%); }
 
 button,
 a { -webkit-tap-highlight-color: transparent; }
@@ -140,11 +141,13 @@ button { font: inherit; }
   background-size: 100% 100%, 112px 100%;
   mask-image: linear-gradient(to bottom, black 0%, transparent 73%);
 }
-.scene-overlay { background: radial-gradient(ellipse at 72% 45%, rgb(95 160 185 / 18%), transparent 50%); }
-.storm-light { background: radial-gradient(ellipse at 69% 34%, rgb(122 157 171 / 15%), transparent 42%), linear-gradient(180deg, rgb(10 16 20 / 5%), transparent 65%); }
-.rain-layer { z-index: 2; background-image: repeating-linear-gradient(108deg, transparent 0 28px, rgb(214 235 243 / 15%) 29px, transparent 30px 48px); mask-image: linear-gradient(180deg, black 0%, transparent 84%); }
-.rain-far { opacity: .18; background-size: 95px 180px; }
-.rain-near { opacity: .12; background-size: 161px 240px; background-position: 33px 10px; }
+.scene-overlay { background: radial-gradient(ellipse at 70% 48%, rgb(160 182 187 / 15%), transparent 55%); }
+.storm-light { background: radial-gradient(ellipse at 61% 26%, rgb(201 217 220 / 19%), transparent 48%), linear-gradient(180deg, rgb(13 19 22 / 8%), transparent 62%); }
+.landscape { z-index: 1; overflow: hidden; opacity: .76; }
+.ridge { position: absolute; right: -7%; bottom: 28%; left: -7%; height: 31%; }
+.ridge-far { background: linear-gradient(180deg, rgb(150 169 171 / 25%), rgb(78 96 99 / 16%)); clip-path: polygon(0 75%, 11% 57%, 18% 65%, 31% 29%, 41% 48%, 52% 16%, 61% 34%, 73% 22%, 84% 51%, 92% 31%, 100% 62%, 100% 100%, 0 100%); filter: blur(2px); }
+.ridge-near { bottom: 24%; height: 21%; background: linear-gradient(180deg, rgb(72 92 95 / 26%), rgb(31 43 46 / 46%)); clip-path: polygon(0 53%, 17% 45%, 29% 66%, 43% 36%, 58% 54%, 74% 24%, 88% 55%, 100% 39%, 100% 100%, 0 100%); filter: blur(1px); }
+.rain-layer { display: none; }
 .ambient-orb { will-change: transform; }
 .hero-eyebrow { letter-spacing: .28em; }
 .hero-word { white-space: nowrap; letter-spacing: .015em; }
@@ -180,14 +183,14 @@ button { font: inherit; }
 .car-environment { z-index: 1; }
 .road-surface {
   border-top: 1px solid rgb(203 224 231 / 18%);
-  background: linear-gradient(180deg, #10191e 0%, #090d10 26%, #111519 64%, #080b0d 100%);
-  box-shadow: 0 -18px 65px rgb(119 160 177 / 11%);
+  background: linear-gradient(180deg, #30393c 0%, #20272a 16%, #111719 64%, #080b0d 100%);
+  box-shadow: 0 -18px 65px rgb(154 181 188 / 13%);
   transform: perspective(1000px) rotateX(8deg) scale(1.08);
   transform-origin: center top;
 }
 .road-edge { background: rgb(184 220 231 / 22%); box-shadow: 0 0 24px rgb(133 201 222 / 24%); }
-.road-stripes { background-image: repeating-linear-gradient(168deg, transparent 0 17px, rgb(203 221 228 / 12%) 18px, transparent 20px 45px); opacity: .38; }
-.road-markings { background: linear-gradient(90deg, transparent 5%, rgb(241 182 90 / 62%) 28%, transparent 52%, rgb(241 182 90 / 54%) 77%, transparent 94%); box-shadow: 0 0 16px rgb(238 168 69 / 16%); }
+.road-stripes { background-image: repeating-linear-gradient(168deg, transparent 0 26px, rgb(214 226 228 / 4%) 27px, transparent 29px 58px); opacity: .62; }
+.road-markings { background: linear-gradient(90deg, transparent 10%, rgb(215 222 220 / 24%) 28%, transparent 47%, rgb(215 222 220 / 19%) 72%, transparent 90%); box-shadow: 0 0 13px rgb(196 216 222 / 8%); }
 .wet-reflection { background: radial-gradient(ellipse at 70% 20%, rgb(91 163 194 / 14%), transparent 45%), linear-gradient(180deg, transparent, rgb(132 170 185 / 8%)); }
 .vehicle-shadow { z-index: 1; background: rgb(0 0 0 / 70%); filter: blur(28px); }
 .car-track { z-index: 2; }
