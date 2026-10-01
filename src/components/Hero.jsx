@@ -108,9 +108,9 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className="scroll-cue absolute bottom-[18%] left-1/2 z-20 flex -translate-x-1/2 flex-col items-center gap-2 text-[9px] font-bold uppercase tracking-[0.24em] text-black/45 md:bottom-auto md:left-auto md:right-10 md:top-[48%] md:translate-x-0 md:items-end" aria-label="Scroll down to move the car">
-            <span>Scroll to drive</span>
-            <span className="scroll-arrow" aria-hidden="true">↓</span>
+          <div className="scroll-cue absolute bottom-6 right-6 z-20 flex items-center text-[9px] font-bold uppercase tracking-[0.24em] text-black/45 md:bottom-auto md:right-10 md:top-[48%] md:flex-col md:items-end md:gap-2" aria-label="Scroll down to move the car">
+            <span className="sr-only md:not-sr-only">Scroll to drive</span>
+            <span className="scroll-arrow flex h-10 w-10 items-center justify-center rounded-full border border-black/15 bg-white/80 text-sm backdrop-blur-sm md:h-auto md:w-auto md:border-0 md:bg-transparent" aria-hidden="true">↓</span>
           </div>
         </div>
         <div className="progress-track pointer-events-none absolute bottom-0 left-0 h-[2px] w-full" aria-hidden="true">
