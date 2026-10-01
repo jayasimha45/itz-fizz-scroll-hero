@@ -11,9 +11,11 @@ A premium, responsive creative-agency landing page built around a custom vector 
 
 - Full-viewport hero with an animated, letter-spaced headline, description, calls to action, and four impact metrics.
 - Original inline SVG grand-touring car with shaded bodywork, glass, headlights, detailed wheels, and a ground shadow.
+- A restrained racing-red finish that gives the moving car a clear focal point against the warm neutral canvas.
 - ScrollTrigger scrub maps scroll progress to the car's horizontal movement, vertical drift, rotation, scale, and wheel rotation. Scrolling upward reverses the animation.
 - Three-dimensional viewport-height scroll scene, fixed navigation, subtle progress line, and a transition section.
 - Responsive desktop navigation and an accessible mobile menu that closes on navigation or Escape.
+- A practical services section covering digital strategy, product and web, and continuous growth.
 - Reduced-motion support: the long pinned scene and complex motion are disabled while content and a static car remain visible.
 - Transform-based animation, scoped GSAP contexts, cleanup on unmount, and no per-frame React state updates.
 - GitHub Pages deployment with a repository-aware production base path.

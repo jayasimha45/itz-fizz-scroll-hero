@@ -200,7 +200,7 @@ button { font: inherit; }
   .stat-item:nth-child(n + 3) { padding-top: 14px; }
   .stat-item dd { margin-top: 6px; }
   .car-environment { height: 39%; }
-  .car-track { bottom: 4%; }
+  .car-track { bottom: 9%; }
   .road-surface { height: 20%; }
   .road-edge { bottom: 20%; }
   .road-markings { bottom: 7%; }

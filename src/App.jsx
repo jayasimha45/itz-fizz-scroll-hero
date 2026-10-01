@@ -22,7 +22,7 @@ function App() {
         .from(".stat-item", { autoAlpha: 0, y: 30, scale: 0.95, duration: 0.55, stagger: 0.12 }, "-=0.18")
         .from(".scroll-cue", { autoAlpha: 0, y: 10, duration: 0.4 }, "-=0.15");
 
-      gsap.to(".scroll-cue", {
+      gsap.fromTo(".scroll-cue", { autoAlpha: 1, y: 0 }, {
         autoAlpha: 0,
         y: -12,
         ease: "none",

@@ -26,10 +26,10 @@ export default function CarVisual() {
         <title id="car-title">Original ITZFIZZ grand touring car illustration</title>
         <defs>
           <linearGradient id="carBody" x1="0" y1="0" x2="0.94" y2="1">
-            <stop offset="0" stopColor="#51595a" />
-            <stop offset="0.22" stopColor="#1d2224" />
-            <stop offset="0.64" stopColor="#080a0b" />
-            <stop offset="1" stopColor="#343a3b" />
+            <stop offset="0" stopColor="#ff746a" />
+            <stop offset="0.2" stopColor="#ed2630" />
+            <stop offset="0.58" stopColor="#bd111e" />
+            <stop offset="1" stopColor="#710a13" />
           </linearGradient>
           <linearGradient id="windowGlass" x1="0" y1="0" x2="0.8" y2="1">
             <stop offset="0" stopColor="#eef3f2" />
@@ -48,8 +48,8 @@ export default function CarVisual() {
             <stop offset="1" stopColor="#7d8989" />
           </linearGradient>
           <linearGradient id="lowerBody" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stopColor="#333a3b" />
-            <stop offset="1" stopColor="#090b0c" />
+            <stop offset="0" stopColor="#96101a" />
+            <stop offset="1" stopColor="#39080d" />
           </linearGradient>
         </defs>
 
@@ -65,7 +65,7 @@ export default function CarVisual() {
         <path d="M289 141 382 82" stroke="#ffffff" strokeWidth="2" opacity="0.5" />
         <path d="M520 62 H576 C610 62 635 74 656 102" fill="none" stroke="#ffffff" strokeWidth="2" opacity="0.4" />
 
-        <path d="M128 188 225 156 270 151" fill="none" stroke="#c2c7c5" strokeWidth="2" opacity="0.3" />
+        <path d="M128 188 225 156 270 151" fill="none" stroke="#ffe3dd" strokeWidth="2" opacity="0.48" />
         <path d="M116 218 C267 192 469 188 646 201 C733 207 801 217 858 237" fill="none" stroke="#aeb4b3" strokeWidth="3" opacity="0.4" />
         <path d="M307 151 340 153 326 213 292 216Z" fill="#080a0b" opacity="0.9" />
         <path d="M520 150 H535 V211 H520Z" fill="#080a0b" opacity="0.88" />
@@ -76,7 +76,7 @@ export default function CarVisual() {
         <path d="M795 190 C824 197 849 213 865 231 L860 238 812 231Z" fill="url(#lamp)" />
         <path d="M735 233 H863" stroke="url(#chrome)" strokeWidth="4" opacity="0.8" />
         <path d="M105 264 C231 274 454 276 626 270" fill="none" stroke="#555d5e" strokeWidth="4" opacity="0.66" />
-        <path d="M194 182 C284 163 362 156 451 156" fill="none" stroke="#ffffff" strokeWidth="2" opacity="0.16" />
+        <path d="M194 182 C284 163 362 156 451 156" fill="none" stroke="#fff4ef" strokeWidth="2" opacity="0.34" />
         <path d="M151 266 H180 M637 266 H759" stroke="#090b0c" strokeWidth="8" />
       </svg>
     </div>
