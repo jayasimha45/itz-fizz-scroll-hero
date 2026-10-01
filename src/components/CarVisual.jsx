@@ -23,7 +23,7 @@ export default function CarVisual() {
     <div className="car-wrap relative w-[min(92vw,390px)] sm:w-[440px] md:w-[min(68vw,540px)] lg:w-[min(50vw,650px)]">
       <div className="car-shadow absolute bottom-[-7px] left-[12%] h-5 w-[76%] rounded-[50%] bg-black/20 blur-xl" />
       <svg viewBox="0 0 900 330" role="img" aria-labelledby="car-title" className="relative block w-full overflow-visible drop-shadow-[0_18px_18px_rgba(0,0,0,0.12)]">
-        <title id="car-title">Original ITZFIZZ grand touring car illustration</title>
+        <title id="car-title">Original ITZFIZZ grand touring car illustration with a scroll-charged battery display</title>
         <defs>
           <linearGradient id="carBody" x1="0" y1="0" x2="0.94" y2="1">
             <stop offset="0" stopColor="#ff746a" />
@@ -64,6 +64,14 @@ export default function CarVisual() {
         <path d="M499 56 V139" stroke="#aeb7b6" strokeWidth="3" opacity="0.65" />
         <path d="M289 141 382 82" stroke="#ffffff" strokeWidth="2" opacity="0.5" />
         <path d="M520 62 H576 C610 62 635 74 656 102" fill="none" stroke="#ffffff" strokeWidth="2" opacity="0.4" />
+
+        <g transform="translate(558 78)" aria-hidden="true">
+          <rect x="0" y="0" width="94" height="46" rx="8" fill="#101718" fillOpacity="0.9" stroke="#dce4e1" strokeOpacity="0.55" strokeWidth="2" />
+          <rect x="8" y="11" width="62" height="24" rx="3" fill="#dce4e1" fillOpacity="0.18" />
+          <rect className="battery-fill" x="11" y="14" width="56" height="18" rx="2" fill="#82d9a9" />
+          <rect x="72" y="17" width="6" height="12" rx="2" fill="#dce4e1" />
+          <path d="m39 15-9 10h7l-2 7 11-12h-7l2-5Z" fill="#10251b" />
+        </g>
 
         <path d="M128 188 225 156 270 151" fill="none" stroke="#ffe3dd" strokeWidth="2" opacity="0.48" />
         <path d="M116 218 C267 192 469 188 646 201 C733 207 801 217 858 237" fill="none" stroke="#aeb4b3" strokeWidth="3" opacity="0.4" />

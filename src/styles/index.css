@@ -175,6 +175,7 @@ button { font: inherit; }
 }
 .road-edge { background: rgb(17 19 21 / 15%); }
 .car-wrap { transform-box: fill-box; transform-origin: center center; will-change: transform; }
+.battery-fill { transform-box: fill-box; transform-origin: left center; }
 .car-shadow { filter: blur(16px); }
 .wheel { transform-box: fill-box; transform-origin: center; }
 .scroll-cue { transition: color 220ms ease; }

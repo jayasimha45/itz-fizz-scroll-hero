@@ -40,6 +40,13 @@ export default function Hero() {
         scrollTrigger: { ...drive },
       });
 
+      gsap.fromTo(".battery-fill", { scaleX: 0.18 }, {
+        scaleX: 1,
+        transformOrigin: "left center",
+        ease: "none",
+        scrollTrigger: { ...drive },
+      });
+
       gsap.to(".road-line", {
         xPercent: 16,
         ease: "none",
