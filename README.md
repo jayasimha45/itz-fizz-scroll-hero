@@ -38,6 +38,12 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000). The development server uses `.next-dev` so a production export can be built without replacing the development server's files.
 
+Run the TypeScript check with:
+
+```bash
+npm run typecheck
+```
+
 ## Build
 
 ```bash
