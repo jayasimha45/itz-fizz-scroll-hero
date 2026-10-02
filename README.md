@@ -10,8 +10,8 @@ A premium, responsive creative-agency landing page built around a custom vector 
 ## Features
 
 - Full-viewport hero with an animated, letter-spaced headline, description, calls to action, and four impact metrics.
-- Original inline SVG red performance coupe with sculpted body panels, glass, illuminated headlamps, and scroll-rotating detailed wheels.
-- Atmospheric mountain-road scene with mist, a textured road, subtle reflections, and a CSS perspective stage for a dimensional presentation.
+- Original inline SVG midnight-black luxury sedan with reflective glass, silver wheels, and a clean side profile.
+- Minimal warm-white scene with a fine road line, faint circular geometry, a charging-station detail, and a scroll-linked charge meter.
 - ScrollTrigger scrub maps scroll progress to the car's horizontal movement, vertical drift, rotation, scale, and wheel rotation. Scrolling upward reverses the animation.
 - Three-dimensional viewport-height scroll scene, fixed navigation, subtle progress line, and a transition section.
 - Responsive desktop navigation and an accessible mobile menu that closes on navigation or Escape.

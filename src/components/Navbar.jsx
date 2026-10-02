@@ -11,7 +11,7 @@ export default function Navbar({ menuOpen, setMenuOpen, onNavigate }) {
       className="site-header fixed inset-x-0 top-0 z-50 px-4 pt-4 sm:px-6 md:px-10"
       onKeyDown={(event) => { if (event.key === "Escape") setMenuOpen(false); }}
     >
-      <nav className="nav-shell mx-auto flex max-w-7xl items-center justify-between rounded-full border border-white/10 bg-[#0a1010]/85 px-5 py-3 shadow-[0_4px_24px_rgba(0,0,0,0.22)] backdrop-blur-xl">
+      <nav className="nav-shell mx-auto flex max-w-7xl items-center justify-between rounded-full border border-black/10 bg-white/75 px-5 py-3 shadow-[0_4px_24px_rgba(0,0,0,0.04)] backdrop-blur-xl">
         <a href="#top" onClick={onNavigate} className="wordmark" aria-label="ITZFIZZ home">
           ITZFIZZ<span aria-hidden="true">.</span>
         </a>
