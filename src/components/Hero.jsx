@@ -1,6 +1,5 @@
 import { useLayoutEffect, useRef } from "react";
 import { gsap } from "../lib/gsap";
-import Stats from "./Stats";
 import CarVisual from "./CarVisual";
 
 export default function Hero() {
@@ -32,13 +31,6 @@ export default function Hero() {
           scrollTrigger: drive,
         },
       );
-
-      gsap.to(".wheel", {
-        rotation: 420,
-        transformOrigin: "center center",
-        ease: "none",
-        scrollTrigger: { ...drive },
-      });
 
       gsap.fromTo(".battery-fill", { scaleX: 0.18 }, {
         scaleX: 1,
@@ -108,11 +100,6 @@ export default function Hero() {
             <p className="hero-description mt-5 max-w-xl text-sm leading-7 text-black/55 sm:mt-7 sm:text-base md:text-lg md:leading-8">
               We create high-performance digital experiences that turn ambitious ideas into meaningful results.
             </p>
-            <div className="hero-actions mt-5 flex flex-wrap gap-3 sm:mt-7">
-              <a href="#work" className="button-primary">Explore Our Work <span aria-hidden="true">↗</span></a>
-              <a href="#contact" className="button-secondary">Let’s Talk <span aria-hidden="true">↗</span></a>
-            </div>
-            <Stats />
           </div>
 
           <div className="car-environment pointer-events-none absolute inset-x-0 bottom-0 h-[52%] overflow-hidden">

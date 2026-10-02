@@ -18,9 +18,26 @@ function App() {
         .from(".hero-eyebrow", { autoAlpha: 0, y: 20, duration: 0.7 })
         .from(".hero-word", { autoAlpha: 0, yPercent: 100, duration: 0.85, stagger: 0.12 }, "-=0.28")
         .from(".hero-description", { autoAlpha: 0, y: 24, duration: 0.62 }, "-=0.3")
-        .from(".hero-actions > *", { autoAlpha: 0, y: 18, duration: 0.5, stagger: 0.1 }, "-=0.25")
-        .from(".stat-item", { autoAlpha: 0, y: 30, scale: 0.95, duration: 0.55, stagger: 0.12 }, "-=0.18")
         .from(".scroll-cue", { autoAlpha: 0, y: 10, duration: 0.4 }, "-=0.15");
+
+      gsap.from(".results-section .hero-actions > *", {
+        autoAlpha: 0,
+        y: 16,
+        duration: 0.5,
+        stagger: 0.1,
+        ease: "power3.out",
+        scrollTrigger: { trigger: ".results-section", start: "top 78%", once: true },
+      });
+
+      gsap.from(".results-section .stat-item", {
+        autoAlpha: 0,
+        y: 26,
+        scale: 0.97,
+        duration: 0.55,
+        stagger: 0.12,
+        ease: "power3.out",
+        scrollTrigger: { trigger: ".results-section", start: "top 72%", once: true },
+      });
 
       gsap.fromTo(".scroll-cue", { autoAlpha: 1, y: 0 }, {
         autoAlpha: 0,

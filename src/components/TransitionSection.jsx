@@ -1,3 +1,5 @@
+import Stats from "./Stats";
+
 const services = [
   {
     number: "01",
@@ -18,7 +20,17 @@ const services = [
 
 export default function TransitionSection() {
   return (
-    <section id="work" className="transition-section relative overflow-hidden bg-[#111315] px-6 py-24 text-white sm:py-32 md:px-10 md:py-40" aria-labelledby="transition-title">
+    <>
+    <section id="work" className="results-section bg-[#f8f8f6] px-6 py-16 text-[#111315] sm:py-20 md:px-10 md:py-24" aria-label="Project impact and next steps">
+      <div className="mx-auto max-w-7xl">
+        <div className="hero-actions flex flex-wrap gap-3">
+          <a href="#services" className="button-primary">Explore Our Work <span aria-hidden="true">↗</span></a>
+          <a href="#contact" className="button-secondary">Let’s Talk <span aria-hidden="true">↗</span></a>
+        </div>
+        <Stats />
+      </div>
+    </section>
+    <section className="transition-section relative overflow-hidden bg-[#111315] px-6 py-24 text-white sm:py-32 md:px-10 md:py-40" aria-labelledby="transition-title">
       <div className="pointer-events-none absolute -right-28 -top-48 h-[34rem] w-[34rem] rounded-full border border-white/[0.06]" aria-hidden="true" />
       <div className="pointer-events-none absolute -right-12 -top-32 h-[26rem] w-[26rem] rounded-full border border-white/[0.06]" aria-hidden="true" />
       <div className="relative mx-auto grid max-w-7xl gap-10 md:grid-cols-[1fr_0.85fr] md:items-end md:gap-20">
@@ -52,5 +64,6 @@ export default function TransitionSection() {
         <a href="#contact" className="transition-link">Let’s make the next move <span aria-hidden="true">↗</span></a>
       </div>
     </section>
+    </>
   );
 }
