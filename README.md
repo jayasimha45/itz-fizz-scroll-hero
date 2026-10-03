@@ -9,10 +9,10 @@ A premium, responsive creative-agency landing page built around a custom vector 
 
 ## Features
 
-- Full-viewport hero with an animated, letter-spaced headline and description; calls to action and impact metrics appear in the next section.
+- Full-viewport hero with an animated, letter-spaced headline, description, and four impact metrics visible in the first screen; calls to action follow the car scene.
 - Original inline SVG midnight-black luxury sedan with reflective glass, silver wheels, and a clean side profile.
 - Minimal warm-white scene with a fine road line, faint circular geometry, a charging-station detail, and a scroll-linked charge meter.
-- ScrollTrigger scrub maps scroll progress to the car's horizontal movement, vertical drift, slight body tilt, scale, and charge meter. Scrolling upward reverses the animation; the wheels stay still.
+- GSAP reveals the eyebrow, headline, description, and four metrics sequentially on load. ScrollTrigger scrub maps scroll progress to the car's horizontal movement, vertical drift, slight body tilt, scale, and charge meter. Scrolling upward reverses the animation; the wheels stay still.
 - Three-dimensional viewport-height scroll scene, fixed navigation, subtle progress line, and a transition section.
 - Responsive desktop navigation and an accessible mobile menu that closes on navigation or Escape.
 - A practical services section covering digital strategy, product and web, and continuous growth.

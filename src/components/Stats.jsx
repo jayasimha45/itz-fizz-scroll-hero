@@ -7,11 +7,11 @@ const stats = [
 
 export default function Stats() {
   return (
-    <dl className="stats-grid mt-6 grid grid-cols-2 gap-3 sm:mt-7 sm:gap-4 md:mt-8 md:grid-cols-4">
-      {stats.map(([value, label], index) => (
+    <dl className="stats-grid grid grid-cols-2 gap-2 sm:gap-3 md:grid-cols-4">
+      {stats.map(([value, label]) => (
         <div key={label} className="stat-item min-w-0">
-          <dt className="text-[clamp(2rem,4.2vw,3.4rem)] font-bold leading-none tracking-[-0.065em] tabular-nums">{value}</dt>
-          <dd className="mt-2 text-[9px] font-semibold tracking-[0.02em] text-white/55 sm:text-[10px] md:text-[11px]">{label}</dd>
+          <dt className="text-[clamp(1.55rem,3.3vw,2.25rem)] font-bold leading-none tracking-[-0.065em] tabular-nums">{value}</dt>
+          <dd className="mt-1.5 text-[8px] font-semibold tracking-[0.015em] text-black/55 sm:text-[9px] md:text-[10px]">{label}</dd>
         </div>
       ))}
     </dl>

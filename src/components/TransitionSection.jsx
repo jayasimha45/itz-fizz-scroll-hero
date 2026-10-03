@@ -1,5 +1,3 @@
-import Stats from "./Stats";
-
 const services = [
   {
     number: "01",
@@ -27,7 +25,6 @@ export default function TransitionSection() {
           <a href="#services" className="button-primary">Explore Our Work <span aria-hidden="true">↗</span></a>
           <a href="#contact" className="button-secondary">Let’s Talk <span aria-hidden="true">↗</span></a>
         </div>
-        <Stats />
       </div>
     </section>
     <section className="transition-section relative overflow-hidden bg-[#111315] px-6 py-24 text-white sm:py-32 md:px-10 md:py-40" aria-labelledby="transition-title">

@@ -1,6 +1,7 @@
 import { useLayoutEffect, useRef } from "react";
 import { gsap } from "../lib/gsap";
 import CarVisual from "./CarVisual";
+import Stats from "./Stats";
 
 export default function Hero() {
   const zoneRef = useRef(null);
@@ -100,6 +101,9 @@ export default function Hero() {
             <p className="hero-description mt-5 max-w-xl text-sm leading-7 text-black/55 sm:mt-7 sm:text-base md:text-lg md:leading-8">
               We create high-performance digital experiences that turn ambitious ideas into meaningful results.
             </p>
+            <div className="hero-stats mt-5 max-w-5xl sm:mt-6" aria-label="Agency impact statistics">
+              <Stats />
+            </div>
           </div>
 
           <div className="car-environment pointer-events-none absolute inset-x-0 bottom-0 h-[52%] overflow-hidden">
